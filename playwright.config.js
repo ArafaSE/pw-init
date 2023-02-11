@@ -6,7 +6,7 @@ const config ={
     timeout: 40000,
     use: {
         baseURL: 'https://opensource-demo.orangehrmlive.com',
-        headless: false,
+        headless: true,
         // browserName: 'firefox',
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
@@ -30,9 +30,34 @@ const config ={
         //   use: { ...devices['iPhone 13 Pro Max'] },
         // },
       ],
-    reporter: 'html',
+    //reporter: process.env.CI ? 'dot' : 'list',
+    // reporter: [['html', {
+    //   open: 'never',
+    //   host: '0.0.0.0',
+    //   port: 9223,
+    // }]],
+    // reporter: [['json', { outputFile: 'results.json' }]],
+    // reporter: [['junit', { outputFile: 'results.xml' }]],
+    // reporter: [
+    //   ['list'],
+    //   ['json', {  outputFile: 'test-results.json' }],
+    //   ['html', { open: 'never'}],
+    //   ['junit', { outputFile: 'results.xml' }]
+    // ],
+    // reporter: './myReporter.js',
+    reporter: [
+      [
+        "allure-playwright",
+        {
+          detail: true,
+          outputFolder: "my-allure-results",
+          suiteTitle: false,
+        },
+      ],
+    ],
     workers: 3,
-    retries: 1
+    retries: 0,
+    reportSlowTests: null,
 };
 
 export default config;
