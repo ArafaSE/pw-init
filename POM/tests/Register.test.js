@@ -41,7 +41,7 @@ test.describe('Register user', async () => {
         await expect(accountDeletedPage.accountDeletedTxt).toBeVisible();
     });
     
-    test("Register user with existing email address", async () => {
+    test("Register user with existing email address @wip", async () => {
         
     });
 });
