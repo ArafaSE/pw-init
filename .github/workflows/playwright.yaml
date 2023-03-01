@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright functional Tests
 on:
   push:
     branches: [main]
@@ -10,7 +10,7 @@ env:
   LOGIN_PASSWORD: ${{ vars.LOGIN_PASSWORD }}
   LOGIN_IEMAIL: ${{ vars.LOGIN_IEMAIL }}
   LOGIN_IPASSWORD: ${{ vars.LOGIN_IPASSWORD }}
-  
+
 jobs:
   test:
     timeout-minutes: 60
