@@ -5,7 +5,6 @@ on:
   pull_request:
     branches: [main]
 env:
-  # Setting an environment variable with the value of a configuration variable
   LOGIN_EMAIL: ${{ vars.LOGIN_EMAIL }}
   LOGIN_PASSWORD: ${{ vars.LOGIN_PASSWORD }}
   LOGIN_IEMAIL: ${{ vars.LOGIN_IEMAIL }}
@@ -14,12 +13,11 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    environment: test
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
