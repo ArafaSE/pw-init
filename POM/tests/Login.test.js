@@ -19,7 +19,7 @@ test.describe('Login user', async () => {
         await expect(await homePage.getElementByText(' Logged in as Mohamed')).toBeVisible();
     });
     
-    test("Login user with incorrect email and password @wip", async () => {
+    test("Login user with incorrect email and password", async () => {
         // 1. Write incorrect login email and password then submit
         await loginPage.login(process.env.LOGIN_IEMAIL, process.env.LOGIN_IPASSWORD)
         // 2. Verify that 'Your email or password is incorrect!' is visible
