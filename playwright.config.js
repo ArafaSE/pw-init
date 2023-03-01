@@ -30,7 +30,7 @@ const config ={
         //   use: { ...devices['iPhone 13 Pro Max'] },
         // },
       ],
-    reporter: process.env.CI ? 'dot' : 'list',
+    reporter: process.env.CI ? [['html'], ['dot']] : 'list',
     // reporter: [
     //   [
     //     "allure-playwright",
