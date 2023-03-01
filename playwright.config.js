@@ -30,31 +30,17 @@ const config ={
         //   use: { ...devices['iPhone 13 Pro Max'] },
         // },
       ],
-    //reporter: process.env.CI ? 'dot' : 'list',
-    // reporter: [['html', {
-    //   open: 'never',
-    //   host: '0.0.0.0',
-    //   port: 9223,
-    // }]],
-    // reporter: [['json', { outputFile: 'results.json' }]],
-    // reporter: [['junit', { outputFile: 'results.xml' }]],
+    reporter: process.env.CI ? 'dot' : 'list',
     // reporter: [
-    //   ['list'],
-    //   ['json', {  outputFile: 'test-results.json' }],
-    //   ['html', { open: 'never'}],
-    //   ['junit', { outputFile: 'results.xml' }]
+    //   [
+    //     "allure-playwright",
+    //     {
+    //       detail: true,
+    //       outputFolder: "my-allure-results",
+    //       suiteTitle: false,
+    //     },
+    //   ],
     // ],
-    // reporter: './myReporter.js',
-    reporter: [
-      [
-        "allure-playwright",
-        {
-          detail: true,
-          outputFolder: "my-allure-results",
-          suiteTitle: false,
-        },
-      ],
-    ],
     workers: 3,
     retries: 0,
     reportSlowTests: null,
