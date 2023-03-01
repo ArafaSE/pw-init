@@ -5,6 +5,7 @@ on:
   pull_request:
     branches: [main]
 env:
+ # Setting an environment variable with the value of a configuration variable
   LOGIN_EMAIL: ${{ vars.LOGIN_EMAIL }}
   LOGIN_PASSWORD: ${{ vars.LOGIN_PASSWORD }}
   LOGIN_IEMAIL: ${{ vars.LOGIN_IEMAIL }}
