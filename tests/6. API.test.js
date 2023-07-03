@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test"
 
-test.only("1. Get user by id", async ({request}) => {
+test("1. Get user by id", async ({request}) => {
     const baseUrl = 'https://reqres.in';
 
     // 1. use pw request '/api/users/2' to get single user
