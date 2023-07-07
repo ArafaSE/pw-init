@@ -107,4 +107,3 @@ dist
 test-results/
 playwright-report/
 my-allure-results
-playwright/.auth/*
