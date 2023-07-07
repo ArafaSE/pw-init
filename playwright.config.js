@@ -2,7 +2,7 @@ import { devices } from "@playwright/test";
 require('dotenv').config();
 
 const config ={
-    testDir: 'POM',
+    testDir: 'tests',
     timeout: 40000,
     use: {
         baseURL: 'https://opensource-demo.orangehrmlive.com',
@@ -14,12 +14,16 @@ const config ={
         // viewport: { width: 1280, height: 720 },
         launchOptions: {
             slowMo: 100,
-        }
+        },
     },
     projects: [
+        // {
+        //   name: 'Android Pixel',
+        //   use: { ...devices['Pixel 5'] },
+        // },
         {
-          name: 'Android Pixel',
-          use: { ...devices['Pixel 5'] },
+          name: 'Desktop Chrome',
+          use: { ...devices['Desktop Chrome'] },
         },
         // {
         //   name: 'Desktop firefox',
